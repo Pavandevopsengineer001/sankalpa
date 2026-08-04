@@ -1,97 +1,75 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* THE DIVINE FARMS - Premium Nature-Inspired Color Palette */
-  /* Rich earthy greens with luxurious golden accents */
+  /* SANKALPA FARMS & RESORTS - Premium Luxury Brand Palette */
+  --background: #F8F5ED; /* Pearl White Base */
+  --foreground: #141A16; /* Deep Onyx */
+  --card: #FFFFFF;
+  --card-foreground: #141A16;
+  --popover: #FFFFFF;
+  --popover-foreground: #141A16;
   
-  --background: oklch(0.98 0.008 120);
-  --foreground: oklch(0.15 0.03 150);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.03 150);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.03 150);
+  /* Primary: Deep Forest Green - Trust & Stability */
+  --primary: #1F5D3A;
+  --primary-foreground: #FFFFFF;
+  
+  /* Secondary: Sandstone - Nature & Earth */
+  --secondary: #E9DCC4;
+  --secondary-foreground: #1F5D3A;
+  
+  /* Accent: Harvest Gold - Premium Status */
+  --accent: #C9A227;
+  --accent-foreground: #FFFFFF;
+  
+  /* System Neutrals */
+  --muted: #F1EBE0;
+  --muted-foreground: #5C635E;
+  --destructive: #991B1B;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(31, 93, 58, 0.12); /* Subtle Green Tints in borders */
+  --input: #FFFFFF;
+  --ring: #1F5D3A;
+  
+  /* Chart / Visualization Suite */
+  --chart-1: #1F5D3A;
+  --chart-2: #C9A227;
+  --chart-3: #4A7C59;
+  --chart-4: #8F7A4B;
+  --chart-5: #D4C3A3;
 
-  /* Primary: Rich Forest Green - nature & trust */
-  --primary: oklch(0.32 0.14 155);
-  --primary-foreground: oklch(0.98 0 0);
-
-  /* Secondary: Warm Earth Tone */
-  --secondary: oklch(0.92 0.03 85);
-  --secondary-foreground: oklch(0.15 0.03 150);
-
-  /* Accent: Premium Gold - luxury & warmth */
-  --accent: oklch(0.70 0.18 70);
-  --accent-foreground: oklch(0.15 0.03 150);
-
-  /* Additional colors */
-  --muted: oklch(0.95 0.01 120);
-  --muted-foreground: oklch(0.42 0.02 150);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.88 0.02 120);
-  --input: oklch(0.96 0.01 120);
-  --ring: oklch(0.32 0.14 155);
-  --chart-1: oklch(0.32 0.14 155);
-  --chart-2: oklch(0.70 0.18 70);
-  --chart-3: oklch(0.92 0.03 85);
-  --chart-4: oklch(0.55 0.08 140);
-  --chart-5: oklch(0.65 0.10 90);
-  --radius: 0.75rem;
-
-  --sidebar: oklch(0.98 0.008 120);
-  --sidebar-foreground: oklch(0.15 0.03 150);
-  --sidebar-primary: oklch(0.32 0.14 155);
-  --sidebar-primary-foreground: oklch(0.98 0 0);
-  --sidebar-accent: oklch(0.70 0.18 70);
-  --sidebar-accent-foreground: oklch(0.15 0.03 150);
-  --sidebar-border: oklch(0.88 0.02 120);
-  --sidebar-ring: oklch(0.32 0.14 155);
+  --radius: 1rem; /* Slightly softer enterprise corners */
 }
 
 .dark {
-  --background: oklch(0.12 0.02 150);
-  --foreground: oklch(0.97 0 0);
-  --card: oklch(0.16 0.02 150);
-  --card-foreground: oklch(0.97 0 0);
-  --popover: oklch(0.16 0.02 150);
-  --popover-foreground: oklch(0.97 0 0);
-  --primary: oklch(0.50 0.12 155);
-  --primary-foreground: oklch(0.12 0 0);
-  --secondary: oklch(0.30 0.04 85);
-  --secondary-foreground: oklch(0.97 0 0);
-  --accent: oklch(0.75 0.16 75);
-  --accent-foreground: oklch(0.12 0 0);
-  --muted: oklch(0.22 0.02 150);
-  --muted-foreground: oklch(0.70 0 0);
-  --destructive: oklch(0.5 0.2 27.325);
-  --destructive-foreground: oklch(0.97 0 0);
-  --border: oklch(0.25 0.02 150);
-  --input: oklch(0.20 0.02 150);
-  --ring: oklch(0.50 0.12 155);
-  --chart-1: oklch(0.50 0.12 155);
-  --chart-2: oklch(0.75 0.16 75);
-  --chart-3: oklch(0.55 0.04 85);
-  --chart-4: oklch(0.45 0.08 140);
-  --chart-5: oklch(0.55 0.10 90);
-
-  --sidebar: oklch(0.16 0.02 150);
-  --sidebar-foreground: oklch(0.97 0 0);
-  --sidebar-primary: oklch(0.50 0.12 155);
-  --sidebar-primary-foreground: oklch(0.97 0 0);
-  --sidebar-accent: oklch(0.75 0.16 75);
-  --sidebar-accent-foreground: oklch(0.97 0 0);
-  --sidebar-border: oklch(0.25 0.02 150);
-  --sidebar-ring: oklch(0.50 0.12 155);
+  --background: #0D120F; /* Deep Forest Night */
+  --foreground: #F8F5ED;
+  --card: #141C18;
+  --card-foreground: #F8F5ED;
+  --popover: #141C18;
+  --popover-foreground: #F8F5ED;
+  --primary: #2D8254;
+  --primary-foreground: #FFFFFF;
+  --secondary: #C9A227;
+  --secondary-foreground: #0D120F;
+  --accent: #D4AF37;
+  --accent-foreground: #0D120F;
+  --muted: #1A241F;
+  --muted-foreground: #A1A9A2;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: #1A241F;
+  --ring: #2D8254;
 }
 
 @theme inline {
-  /* Premium fonts: Playfair Display for elegant headings, Poppins for modern body */
-  --font-sans: "Poppins", "Poppins Fallback", system-ui, sans-serif;
-  --font-serif: "Playfair Display", "Playfair Display Fallback", serif;
+  /* UPGRADED ENTERPRISE ARCHITECTURE FONTS */
+  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  --font-serif: "Cinzel", "Cormorant Garamond", "Bodoni Moda", serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
+  
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -116,18 +94,12 @@
   --color-chart-3: var(--chart-3);
   --color-chart-4: var(--chart-4);
   --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  
+  --radius-sm: calc(var(--radius) - 6px);
+  --radius-md: calc(var(--radius) - 4px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-2xl: calc(var(--radius) + 8px);
 }
 
 @layer base {
@@ -135,143 +107,99 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground antialiased selection:bg-accent/30;
   }
-  /* Typography with nature-inspired elegance */
+  
+  /* Professional Typography Scaler */
   h1 {
-    @apply font-serif font-bold text-foreground tracking-tight;
+    @apply font-serif font-black text-foreground tracking-wider uppercase leading-[1.1];
     font-size: clamp(2.5rem, 8vw, 4.5rem);
-    letter-spacing: -0.02em;
   }
   h2 {
-    @apply font-serif font-bold text-foreground tracking-tight;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    letter-spacing: -0.01em;
+    @apply font-serif font-bold text-foreground tracking-wide uppercase leading-tight;
+    font-size: clamp(2rem, 5vw, 3.25rem);
   }
   h3 {
-    @apply font-serif font-bold text-foreground tracking-tight;
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-  }
-  h4,
-  h5,
-  h6 {
-    @apply font-serif font-bold text-foreground;
+    @apply font-serif font-semibold text-foreground tracking-tight;
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
   }
   p {
-    @apply text-foreground leading-relaxed;
-    letter-spacing: 0.2px;
+    @apply text-foreground/80 font-sans font-medium leading-relaxed;
+    letter-spacing: 0.01em;
   }
 }
 
 @layer utilities {
-  /* Nature-inspired glassmorphism */
+  /* Ultra-smooth Glassmorphism */
   .glass {
-    @apply bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.08);
+    @apply bg-white/40 backdrop-blur-xl border border-white/30 rounded-2xl;
+    box-shadow: 0 8px 32px 0 rgba(31, 93, 58, 0.05);
+  }
+  
+  /* Professional Property Details Cards */
+  .property-card {
+    @apply bg-white rounded-3xl border border-border shadow-sm transition-all duration-500 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-2;
   }
 
-  .glass-dark {
-    @apply bg-black/20 backdrop-blur-xl border border-white/10;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 8px 32px rgba(0, 0, 0, 0.25);
+  /* Enterprise Call-to-Action */
+  .btn-enterprise {
+    @apply px-8 py-4 font-bold uppercase tracking-widest text-[10px] md:text-xs rounded-full transition-all duration-500 bg-primary text-white hover:bg-emerald-800 hover:scale-105 active:scale-95 shadow-lg shadow-primary/20;
   }
 
-  /* Premium text utility */
-  .text-premium {
-    @apply font-serif text-foreground;
-    letter-spacing: -0.02em;
+  /* Nature Accent Utility */
+  .leaf-accent {
+    @apply h-1 w-24 bg-gradient-to-r from-primary via-accent to-transparent rounded-full;
   }
 
-  /* Nature accent line */
-  .accent-line {
-    @apply h-1 w-16 bg-gradient-to-r from-primary via-accent to-primary/50 rounded-full;
-  }
-
-  /* Premium button effect */
-  .btn-premium {
-    @apply px-8 py-3 font-medium rounded-lg transition-all duration-300;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-  }
-
-  .btn-premium:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  }
-
-  /* Shimmer effect for premium elements */
+  /* Animated Shimmer */
   .shimmer {
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.3) 50%,
       transparent 100%
     );
     background-size: 200% 100%;
-    animation: shimmer 2s infinite;
+    animation: shimmer-effect 2.5s infinite;
   }
 
-  @keyframes shimmer {
-    0% {
-      background-position: -200% 0;
-    }
-    100% {
-      background-position: 200% 0;
-    }
+  @keyframes shimmer-effect {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
   }
 
-  /* Floating animation */
-  .float {
-    animation: float 3s ease-in-out infinite;
+  /* Smooth Reveal Animation */
+  .float-slow {
+    animation: float-action 6s ease-in-out infinite;
   }
 
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
+  @keyframes float-action {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
   }
 
-  /* Pulse glow effect */
-  .pulse-glow {
-    animation: pulseGlow 2s ease-in-out infinite;
-  }
+  /* Hide scrollbar for clean gallery views */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
 
-  @keyframes pulseGlow {
-    0%, 100% {
-      box-shadow: 0 0 0 0 rgba(var(--primary), 0.4);
-    }
-    50% {
-      box-shadow: 0 0 20px 10px rgba(var(--primary), 0);
-    }
-  }
+/* Global Smoothness */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
 
-  /* Smooth scroll behavior */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    background: var(--background);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: var(--primary);
-    border-radius: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: var(--accent);
-  }
-
-  /* Selection color */
-  ::selection {
-    background: var(--accent);
-    color: var(--accent-foreground);
-  }
+/* Custom Thin Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
 }

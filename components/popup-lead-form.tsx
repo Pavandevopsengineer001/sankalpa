@@ -27,13 +27,13 @@ export function PopupLeadForm() {
 
     if (!mounted) return
 
-    const seen = sessionStorage.getItem("divine_popup_seen")
+    const seen = sessionStorage.getItem("sankalpa_popup_seen")
 
     if (seen) return
 
     const timer = setTimeout(() => {
       setIsOpen(true)
-    }, 50000) // change to 30000 later
+    }, 50000)
 
     return () => clearTimeout(timer)
 
@@ -55,7 +55,7 @@ export function PopupLeadForm() {
 
   const handleClose = () => {
     setIsOpen(false)
-    sessionStorage.setItem("divine_popup_seen", "true")
+    sessionStorage.setItem("sankalpa_popup_seen", "true")
   }
 
 
@@ -96,7 +96,7 @@ export function PopupLeadForm() {
 
       setSubmitted(true)
 
-      sessionStorage.setItem("divine_popup_seen", "true")
+      sessionStorage.setItem("sankalpa_popup_seen", "true")
 
       setTimeout(() => {
         setIsOpen(false)
@@ -144,7 +144,7 @@ export function PopupLeadForm() {
 
             {/* HEADER */}
 
-            <div className="bg-gradient-to-r from-green-800 to-green-700 p-6 text-white relative">
+            <div className="bg-gradient-to-r from-primary to-accent p-6 text-white relative">
 
               <button
                 onClick={handleClose}
@@ -153,22 +153,22 @@ export function PopupLeadForm() {
                 <X size={20} />
               </button>
 
-              <div className="flex items-center gap-2 text-yellow-400 text-sm font-semibold mb-2">
+              <div className="flex items-center gap-2 text-accent-foreground text-sm font-semibold mb-2 uppercase tracking-[0.2em]">
                 <Sparkles size={18} />
-                EXCLUSIVE OFFER
+                Exclusive Invitation
               </div>
 
-              <h3 className="text-2xl font-bold tracking-tight">
-                THE DIVINE FARMS
+              <h3 className="text-3xl font-bold tracking-tight">
+                Launch pricing for premium resort plots
               </h3>
 
-              <p className="text-white/90 text-sm mt-1">
-                Get launch pricing & free resort membership
+              <p className="text-white/90 text-sm mt-2 leading-relaxed">
+                Secure your Sankalpa Farms & Resorts plot with priority pricing and exclusive member benefits.
               </p>
 
-              <div className="mt-4 inline-flex items-center gap-2 px-4 py-1.5 bg-yellow-500 text-black rounded-full text-sm font-bold shadow-md">
-                <Gift size={16} />
-                FREE Resort Membership
+              <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-bold shadow-lg">
+                <Gift size={16} className="text-accent-foreground" />
+                Free Resort Membership
               </div>
 
             </div>
@@ -209,18 +209,18 @@ export function PopupLeadForm() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Your Name"
+                    placeholder="Full Name"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 outline-none"
+                    className="w-full px-4 py-3 border border-border rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary outline-none"
                   />
 
                   <input
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    placeholder="Phone Number"
+                    placeholder="Mobile Number"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 outline-none"
+                    className="w-full px-4 py-3 border border-border rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary outline-none"
                   />
 
                   <input
@@ -229,15 +229,15 @@ export function PopupLeadForm() {
                     onChange={handleChange}
                     placeholder="Email Address"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-600 focus:border-green-600 outline-none"
+                    className="w-full px-4 py-3 border border-border rounded-2xl focus:ring-2 focus:ring-primary focus:border-primary outline-none"
                   />
 
                   <button
                     disabled={loading}
-                    className="w-full py-3 bg-green-700 text-white rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-green-800 transition"
+                    className="w-full py-3 bg-accent text-accent-foreground rounded-2xl font-semibold flex items-center justify-center gap-2 hover:bg-accent/90 transition"
                   >
                     <Send size={16} />
-                    {loading ? "Submitting..." : "Get Exclusive Pricing"}
+                    {loading ? "Submitting..." : "Reserve Launch Offer"}
                   </button>
 
                 </form>

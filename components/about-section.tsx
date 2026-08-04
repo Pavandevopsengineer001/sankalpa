@@ -1,243 +1,194 @@
 "use client"
 
 import { motion } from "framer-motion"
-import {
-  Award,
-  Target,
-  Eye,
-  CheckCircle2,
-  Building2,
-  Users,
-  Handshake,
-  Phone,
-} from "lucide-react"
+import { Award, Target, Eye, CheckCircle2, Building2, Users, Handshake, Phone } from "lucide-react"
 
-export function AboutSection() {
+interface SectionHeaderProps {
+  developerName: string;
+}
+
+interface RightGridItemProps {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  bgClass: string;
+  borderClass: string;
+  iconTextClass: string;
+}
+
+// Sub-Component 1: Reusable Core Metric Block Layout
+function CompetencyBlock({ title, description, icon, bgClass, borderClass, iconTextClass }: RightGridItemProps) {
   return (
-    <section
-      id="about"
-      className="py-20 sm:py-28 bg-background relative overflow-hidden"
-    >
-      {/* Background decorations */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-accent/5 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <span className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-full text-accent font-bold text-sm mb-6">
-            <Building2 size={16} />
-            About The Developer
-          </span>
-
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-6">
-            SRLN Infra Developers
-          </h2>
-
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Creating premium lifestyle destinations where nature,
-            investment potential, and modern amenities come together.
+    <div className={`p-6 rounded-2xl border transition-all duration-300 hover:shadow-md ${bgClass} ${borderClass}`}>
+      <div className="flex gap-4 items-start">
+        <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${iconTextClass}`}>
+          {icon}
+        </div>
+        <div>
+          <h4 className="text-xl font-serif font-black text-gray-900 mb-1.5 leading-snug">
+            {title}
+          </h4>
+          <p className="text-sm text-gray-600 font-medium leading-relaxed">
+            {description}
           </p>
-        </motion.div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
-        <div className="grid lg:grid-cols-2 gap-14 items-start">
+// Sub-Component 2: Section Header Structure
+function SectionHeader({ developerName }: SectionHeaderProps) {
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      viewport={{ once: true }}
+      className="text-center mb-16 sm:mb-20"
+    >
+      <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-emerald-50 border border-emerald-100 rounded-full text-emerald-800 font-bold text-xs uppercase tracking-wider mb-6">
+        <Building2 size={13} className="text-emerald-600" /> Corporate Developer Profile
+      </span>
+      <h2 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-black text-gray-900 mb-6 tracking-tight">
+        {developerName}
+      </h2>
+      <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto font-medium leading-relaxed">
+        Pioneering ultra-affordable, luxury lifestyle destinations across Telangana where legal transparency, rapid land appreciation, and immediate resort utilities converge.
+      </p>
+    </motion.div>
+  )
+}
 
-          {/* LEFT SIDE */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
+// Main Production Component Hook
+export function AboutSection() {
+  const corporateTrustPoints = [
+    "100% Transparent business practices",
+    "Clear legal documentation & spot registration ready",
+    "Unbeatable pricing metrics (Plots from ₹4.5L to ₹8L)",
+    "Fully-completed, functional resort infrastructure active",
+    "Customer-first post-sale management structures",
+    "Continuous site security & plantation preservation guarantees",
+  ]
+
+  return (
+    <section id="about" className="py-20 sm:py-28 bg-white relative overflow-hidden">
+      {/* Decorative Radial Backdrop Accents */}
+      <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-50 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-teal-50/60 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Render Section Header */}
+        <SectionHeader developerName="Sankalpa Farms & Resorts" />
+
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+          
+          {/* LEFT SIDE LAYER: Corporate Core Card */}
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="space-y-6"
           >
-
-            {/* Company Card */}
-            <div className="relative rounded-2xl overflow-hidden bg-gradient-to-br from-primary via-primary to-primary/90 p-8 text-primary-foreground shadow-2xl">
-
-              <div className="absolute top-0 right-0 w-40 h-40 bg-accent/20 rounded-full blur-3xl" />
-
+            <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-900 via-emerald-800 to-emerald-950 p-8 md:p-10 text-white shadow-xl shadow-emerald-950/10 border border-emerald-950">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-emerald-600/20 rounded-full blur-3xl pointer-events-none" />
+              
               <div className="relative z-10">
-
-                <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center mb-6">
-                  <Building2 size={32} />
+                <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 shadow-inner border border-white/10 text-emerald-400">
+                  <Building2 size={26} />
                 </div>
-
-                <h3 className="text-2xl sm:text-3xl font-serif font-bold mb-4">
-                  SRLN Infra Developers
+                
+                <h3 className="text-2xl sm:text-3xl font-serif font-black mb-4 tracking-tight">
+                  Sankalpa Farms & Resorts proudly introduces <span className="text-emerald-100">సుందరవనం</span>
                 </h3>
-
-                <p className="text-primary-foreground/90 leading-relaxed mb-6">
-                  SRLN Infra Developers is dedicated to building
-                  premium farmland and lifestyle projects that blend
-                  natural living with modern infrastructure. Our goal
-                  is to create peaceful destinations where families
-                  can invest, relax, and reconnect with nature.
+                
+                <p className="text-emerald-100/90 text-sm md:text-base font-medium leading-relaxed mb-8">
+                  Sankalpa Farms & Resorts stands as a trusted hallmark in Telangana's land development landscape. Driven by an uncompromised commitment to legal integrity and premium amenities, we transform raw acres into managed farmland resort ecosystems. We design destinations where families can enjoy immediate vacation utilities while their wealth appreciates safely.
                 </p>
 
-                {/* Trust Points */}
-                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/20">
-
-                  <div className="text-center">
-                    <Users size={24} className="mx-auto mb-2 text-accent" />
-                    <p className="text-sm">Happy Clients</p>
+                {/* Counter Metric Row */}
+                <div className="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 text-center">
+                  <div className="space-y-1">
+                    <Users size={22} className="mx-auto text-emerald-400" />
+                    <p className="text-xs font-bold uppercase tracking-wider text-emerald-200">100+ Happy Families</p>
                   </div>
-
-                  <div className="text-center">
-                    <Handshake size={24} className="mx-auto mb-2 text-accent" />
-                    <p className="text-sm">Trust & Integrity</p>
+                  <div className="space-y-1">
+                    <Handshake size={22} className="mx-auto text-emerald-400" />
+                    <p className="text-xs font-bold uppercase tracking-wider text-emerald-200">Spot Registration</p>
                   </div>
-
-                  <div className="text-center">
-                    <Award size={24} className="mx-auto mb-2 text-accent" />
-                    <p className="text-sm">Quality Projects</p>
+                  <div className="space-y-1">
+                    <Award size={22} className="mx-auto text-emerald-400" />
+                    <p className="text-xs font-bold uppercase tracking-wider text-emerald-200">Premium Quality</p>
                   </div>
-
                 </div>
-
               </div>
-
             </div>
 
-            {/* Contact Card */}
-            <div className="p-6 rounded-xl bg-card border border-border hover:border-primary hover:shadow-lg transition">
-
-              <p className="text-sm text-muted-foreground mb-2">
-                For inquiries about THE DIVINE FARMS
+            {/* Direct Connect Context Callout Block */}
+            <div className="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:border-emerald-200 transition-colors duration-300">
+              <p className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">
+                Direct Inquiry Lines to Sankalpa Farms & Resorts Corporate Office
               </p>
-
-              <a
-                href="tel:6309123731"
-                className="flex items-center gap-2 text-xl font-serif font-bold text-primary"
+              <a 
+                href="tel:6309123731" 
+                className="inline-flex items-center gap-2.5 text-xl md:text-2xl font-serif font-black text-emerald-800 hover:text-emerald-700 transition-colors"
               >
-                <Phone size={20} />
-                +91 6309123731
+                <Phone size={22} className="text-emerald-600" /> +91 6309123731
               </a>
-
             </div>
-
           </motion.div>
 
-          {/* RIGHT SIDE */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
+          {/* RIGHT SIDE LAYER: Vision Matrix Stack & Bullet Compliance */}
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="space-y-6"
           >
+            <CompetencyBlock 
+              title="Our Mission"
+              description="To deliver highly secure, clearly titled farmland resort assets packed with premium, active recreational facilities that democratize vacation home ownership for Hyderabad professionals."
+              icon={<Target size={22} />}
+              bgClass="bg-emerald-50/40"
+              borderClass="border-emerald-100/50"
+              iconTextClass="bg-emerald-100/60 text-emerald-800"
+            />
 
-            {/* Mission */}
-            <div className="p-6 rounded-xl bg-primary/5 border border-primary/20">
+            <CompetencyBlock 
+              title="Our Vision"
+              description="To set the golden standard for structural transparency and rapid asset delivery in managed eco-farmland spaces across Southern India."
+              icon={<Eye size={22} />}
+              bgClass="bg-amber-50/40"
+              borderClass="border-amber-100/50"
+              iconTextClass="bg-amber-100/60 text-amber-800"
+            />
 
-              <div className="flex gap-4">
+            <CompetencyBlock 
+              title="Our Values"
+              description="Legal absolute transparency , unwavering building excellence, post-sale community integration, and delivery of infrastructure that honors your hard-earned investments."
+              icon={<Award size={22} />}
+              bgClass="bg-gray-50/80"
+              borderClass="border-gray-100"
+              iconTextClass="bg-gray-200/70 text-gray-700"
+            />
 
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
-                  <Target size={24} className="text-primary" />
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-serif font-bold mb-2">
-                    Our Mission
-                  </h4>
-
-                  <p className="text-muted-foreground">
-                    To develop high-quality farmland communities
-                    offering modern amenities, sustainable living,
-                    and long-term investment value.
-                  </p>
-                </div>
-
-              </div>
-
-            </div>
-
-            {/* Vision */}
-            <div className="p-6 rounded-xl bg-accent/5 border border-accent/20">
-
-              <div className="flex gap-4">
-
-                <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center">
-                  <Eye size={24} className="text-accent" />
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-serif font-bold mb-2">
-                    Our Vision
-                  </h4>
-
-                  <p className="text-muted-foreground">
-                    To become one of Telangana’s most trusted
-                    developers in farmland and lifestyle
-                    communities.
-                  </p>
-                </div>
-
-              </div>
-
-            </div>
-
-            {/* Values */}
-            <div className="p-6 rounded-xl bg-secondary/30 border border-border">
-
-              <div className="flex gap-4">
-
-                <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center">
-                  <Award size={24} className="text-primary" />
-                </div>
-
-                <div>
-                  <h4 className="text-xl font-serif font-bold mb-2">
-                    Our Values
-                  </h4>
-
-                  <p className="text-muted-foreground">
-                    Transparency, trust, sustainable development,
-                    and customer satisfaction guide everything
-                    we build.
-                  </p>
-                </div>
-
-              </div>
-
-            </div>
-
-            {/* Why Choose */}
-            <div>
-
-              <h4 className="text-xl font-serif font-bold mb-4">
-                Why SRLN Infra Developers?
+            {/* Checklist Matrix Area */}
+            <div className="pt-4">
+              <h4 className="text-lg font-serif font-black text-gray-900 mb-4 tracking-tight">
+                Why Choose Sankalpa Farms & Resorts?
               </h4>
-
-              <ul className="space-y-3">
-
-                {[
-                  "Transparent business practices",
-                  "Clear legal documentation",
-                  "Premium farmland developments",
-                  "Focus on nature-based communities",
-                  "Customer-first approach",
-                  "Reliable post-sale support",
-                ].map((item, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center gap-3"
-                  >
-                    <CheckCircle2 size={18} className="text-primary" />
+              <ul className="grid sm:grid-cols-2 gap-3.5">
+                {corporateTrustPoints.map((item, index) => (
+                  <li key={index} className="flex items-start gap-2.5 text-sm text-gray-700 font-semibold leading-snug">
+                    <CheckCircle2 size={16} className="text-emerald-600 mt-0.5 flex-shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
-
               </ul>
-
             </div>
-
           </motion.div>
 
         </div>

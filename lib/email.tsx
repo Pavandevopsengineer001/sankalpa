@@ -13,7 +13,7 @@ export async function sendContactEmail(formData: ContactFormData) {
   try {
     // Email to admin
     const adminEmail = await resend.emails.send({
-      from: 'NatureNest Estates <onboarding@resend.dev>',
+      from: 'Sankalpa Farms & Resorts <onboarding@resend.dev>',
       to: 'mr.pavan.kalyan.51@gmail.com',
       subject: `New Contact Form Submission from ${formData.name}`,
       html: `
@@ -48,7 +48,7 @@ export async function sendContactEmail(formData: ContactFormData) {
             </div>
             
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; font-size: 12px; color: #999;">
-              <p>This is an automated email from NatureNest Estates website.</p>
+              <p>This is an automated email from Sankalpa Farms & Resorts website.</p>
               <p>Submitted on: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</p>
             </div>
           </div>
@@ -58,13 +58,13 @@ export async function sendContactEmail(formData: ContactFormData) {
 
     // Confirmation email to user
     const userEmail = await resend.emails.send({
-      from: 'NatureNest Estates <onboarding@resend.dev>',
+      from: 'Sankalpa Farms & Resorts <onboarding@resend.dev>',
       to: formData.email,
-      subject: 'Thank You for Contacting NatureNest Estates',
+      subject: 'Thank You for Contacting Sankalpa Farms & Resorts',
       html: `
         <div style="font-family: 'Cormorant Garamond', serif; max-width: 600px; margin: 0 auto; padding: 20px; background: #f5f5f5;">
           <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;">
-            <h1 style="color: #1a4d2e; margin-bottom: 20px; font-size: 32px;">NatureNest Estates</h1>
+            <h1 style="color: #1a4d2e; margin-bottom: 20px; font-size: 32px;">Sankalpa Farms & Resorts</h1>
             
             <h2 style="color: #333; font-size: 24px; margin: 20px 0;">Thank You for Your Interest!</h2>
             
@@ -73,7 +73,7 @@ export async function sendContactEmail(formData: ContactFormData) {
             </p>
             
             <p style="color: #666; font-size: 16px; line-height: 1.6; margin: 20px 0;">
-              We have received your inquiry and appreciate your interest in NatureNest Estates. Our team will review your message and get back to you shortly.
+              We have received your inquiry and appreciate your interest in Sankalpa Farms & Resorts. Our team will review your message and get back to you shortly.
             </p>
             
             <div style="background: #f0f0f0; padding: 20px; border-radius: 8px; margin: 30px 0;">
@@ -91,7 +91,7 @@ export async function sendContactEmail(formData: ContactFormData) {
             
             <p style="color: #666; font-size: 14px; margin-top: 30px;">
               Best regards,<br/>
-              <strong>NatureNest Estates Team</strong>
+              <strong>Sankalpa Farms & Resorts Team</strong>
             </p>
             
             <div style="margin-top: 40px; padding-top: 20px; border-top: 1px solid #e0e0e0; font-size: 12px; color: #999;">

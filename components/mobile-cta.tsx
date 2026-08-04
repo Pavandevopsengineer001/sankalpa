@@ -48,7 +48,7 @@ export function MobileCTA() {
         {/* WhatsApp */}
         <motion.a
           whileTap={{ scale: 0.95 }}
-          href="https://wa.me/916309123731?text=Hi! I'm interested in THE DIVINE FARMS project."
+          href="https://wa.me/916309123731?text=Hi! I'm interested in Sankalpa Farms & Resorts."
           target="_blank"
           className="flex flex-col items-center justify-center py-3 bg-green-600 text-white font-semibold"
         >

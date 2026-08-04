@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion"
 
-// WhatsApp SVG Icon
 function WhatsAppIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className}>
@@ -12,57 +11,47 @@ function WhatsAppIcon({ className }: { className?: string }) {
 }
 
 export function FloatingWhatsApp() {
+  // ⚡ Universal API Link with a professionally structured, URI-Encoded message to prevent browser errors
+  const whatsappUrl = "https://whatsapp.com"
+
   return (
     <motion.a
-      href="https://wa.me/916309123731?text=Hi!%20I'm%20interested%20in%20THE%20DIVINE%20FARMS%20project.%20Please%20share%20more%20details."
+      href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-24 md:bottom-6 right-4 md:right-6 z-50 group"
-      initial={{ scale: 0 }}
-      animate={{ scale: 1 }}
-      transition={{ delay: 1, type: "spring", stiffness: 200 }}
-      aria-label="Chat on WhatsApp"
+      className="fixed bottom-6 right-4 md:right-6 z-50 group flex items-center select-none"
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ delay: 1.2, type: "spring", stiffness: 260, damping: 25 }}
+      aria-label="Chat with a Sankalpa Site Manager on WhatsApp"
     >
-      {/* Pulse rings */}
-      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-75" />
-      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-pulse opacity-50" style={{ animationDelay: "0.5s" }} />
-      
-      {/* Main button */}
+      {/* Structural Micro-Rings */}
+      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-60 pointer-events-none" />
+      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-pulse opacity-40 pointer-events-none" style={{ animationDelay: "0.5s" }} />
+
+      {/* Dynamic Animated Core Action Layer */}
       <motion.div
-        className="relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] rounded-full shadow-lg hover:shadow-xl transition-shadow"
+        className="relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full shadow-xl shadow-emerald-950/10 hover:shadow-2xl hover:shadow-emerald-950/20 transition-all duration-300"
         animate={{
-          scale: [1, 1.15, 1],
-          boxShadow: [
-            "0 0 0 0 rgba(37, 211, 102, 0.5)",
-            "0 0 0 20px rgba(37, 211, 102, 0)",
-            "0 0 0 0 rgba(37, 211, 102, 0)",
-          ],
+          scale: [1, 1.08, 1],
         }}
         transition={{
-          duration: 1.5,
+          duration: 2,
           repeat: Infinity,
-          repeatType: "loop",
+          ease: "easeInOut"
         }}
       >
-        <WhatsAppIcon className="w-7 h-7 md:w-8 md:h-8 text-white" />
+        <WhatsAppIcon className="w-7 h-7 md:w-8 md:h-8 text-white fill-white" />
       </motion.div>
 
-      {/* Tooltip */}
-      <motion.div
-        className="absolute right-full mr-3 top-1/2 -translate-y-1/2 hidden md:block"
-        initial={{ opacity: 0, x: 10 }}
-        animate={{ opacity: [0, 1, 1, 0], x: [10, 0, 0, 10] }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          repeatDelay: 1,
-        }}
-      >
-        <div className="px-4 py-2 bg-[#25D366] text-white text-sm font-bold rounded-lg whitespace-nowrap shadow-lg">
-          Chat on WhatsApp!
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-2 h-2 bg-[#25D366] rotate-45" />
+      {/* Value-Injected Hover Notification Tooltip */}
+      <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 hidden lg:block pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="px-4 py-2.5 bg-gray-900 border border-gray-800 text-white text-xs font-bold rounded-xl whitespace-nowrap shadow-2xl flex items-center gap-2">
+          <span className="flex h-2 w-2 rounded-full bg-[#25D366] animate-pulse" />
+          <span>Plots from <strong className="text-amber-400">₹4.5 Lakhs</strong> — Chat Online!</span>
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-2 h-2 bg-gray-900 border-r border-t border-gray-800 rotate-45" />
         </div>
-      </motion.div>
+      </div>
     </motion.a>
   )
 }

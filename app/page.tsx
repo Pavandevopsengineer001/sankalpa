@@ -25,7 +25,7 @@ export default function Home() {
       <AmenitiesSection />
       <InlineLeadForm />
       <LocationSection />
-      <GallerySection />
+      {/* <GallerySection /> */}
       <AboutSection />
       <ContactSection />
       <Footer />

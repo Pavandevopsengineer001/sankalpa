@@ -13,12 +13,12 @@ import { ChevronLeft, Zap, Trees, AlertCircle, CheckCircle } from "lucide-react"
 
 const projectsData: Record<string, any> = {
   "1": {
-    name: "NatureNest Kolanupaka",
+    name: "Sankalpa Heritage Kolanupaka",
     location: "Kolanupaka, Telangana",
     plotSize: "1000 - 2000 Sq.Ft",
     startingPrice: "25 Lakhs onwards",
     image: "/project-1-nature-cottage-farm-land.jpg",
-    description: "Premium farm plots with direct access to the main highway",
+    description: "Premium resort plots with direct access to the main highway",
     overview:
       "Located in the heart of Kolanupaka, this project offers the perfect blend of nature and accessibility.",
     amenities: [
@@ -44,7 +44,7 @@ const projectsData: Record<string, any> = {
   },
 
   "2": {
-    name: "NatureNest Aleru Greens",
+    name: "Sankalpa Greens Aler",
     location: "Aleru, Telangana",
     plotSize: "1500 - 2500 Sq.Ft",
     startingPrice: "35 Lakhs onwards",
@@ -71,7 +71,7 @@ const projectsData: Record<string, any> = {
   },
 
   "3": {
-    name: "NatureNest Valley Retreat",
+    name: "Sankalpa Valley Retreat",
     location: "Kolanupaka Valley",
     plotSize: "2000 - 3000 Sq.Ft",
     startingPrice: "45 Lakhs onwards",

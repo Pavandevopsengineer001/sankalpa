@@ -59,7 +59,7 @@ const highlights = [
   },
   {
     icon: Sparkles,
-    title: "1.5 Acres Amenities",
+    title: "1 Acres Amenities",
     description:
       "Enjoy world-class lifestyle amenities spread across 1.5 acres inside the gated community.",
   },
@@ -87,7 +87,7 @@ export function ProjectsSection() {
         >
           <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary font-bold text-sm mb-6">
             <Sparkles size={16} />
-            Why Choose Divine Farms
+            Why Pay More?
           </span>
 
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-foreground mb-6 tracking-tight">
@@ -95,8 +95,7 @@ export function ProjectsSection() {
           </h2>
 
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Discover what makes <strong>The Divine Farms</strong> the perfect
-            destination for your dream farmland investment and weekend living.
+            Own the same resort lifestyle for significantly less with premium plots near Kolanupaka.
           </p>
         </motion.div>
 
@@ -187,7 +186,7 @@ export function ProjectsSection() {
               </motion.a>
 
               <motion.a
-                href="https://wa.me/916309123731?text=Hi!%20I'm%20interested%20in%20The%20Divine%20Farms.%20Please%20share%20pricing%20details."
+                href="https://wa.me/916309123731?text=Hi!%20I'm%20interested%20in%20Sankalpa%20Farms%20%26%20Resorts.%20Please%20share%20pricing%20details."
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-white/15 backdrop-blur-md text-primary-foreground font-bold rounded-xl border border-white/30 text-lg"
