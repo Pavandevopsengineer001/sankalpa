@@ -11,7 +11,7 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export function FloatingWhatsApp() {
   // ⚡ Universal API Link with a professionally structured, URI-Encoded message to prevent browser errors
-  const phone = "919876543210"; 
+  const phone = "916309123731"; 
   const message = encodeURIComponent(
     "Hi Sankalpa Farms & Resorts 👋\n\nI'm interested in your farm plots. Please share complete details."
   );
