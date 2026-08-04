@@ -3,6 +3,12 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Phone, Mail, MapPin, Facebook, Instagram, Youtube, MessageCircle, ArrowRight } from "lucide-react"
+import { 
+  CALL_HREF, 
+  WHATSAPP_HREF, 
+  CONTACT_PHONE_DISPLAY, 
+  PROJECT_LOCATION_DISPLAY 
+} from "@/lib/contact"
 
 interface FooterLinkItem {
   label: string;
@@ -39,9 +45,6 @@ export function Footer() {
     { href: "https://youtu.be", icon: <Youtube size={18} />, aria: "Watch project overview on YouTube" },
   ]
 
-  // ⚡ Universal URL Route matching your pre-defined message configuration precisely
-  const whatsappUrl = "https://whatsapp.com"
-
   return (
     <footer className="bg-emerald-950 border-t border-emerald-900/60 text-white relative select-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -59,15 +62,16 @@ export function Footer() {
               Configure 121 Sq. Yds at <strong className="text-white">₹4.5L</strong> or 242 Sq. Yds at <strong className="text-white">₹8.0L</strong> with immediate resort amenities active.
             </p>
           </div>
+          
           <div className="flex gap-3 flex-wrap w-full lg:w-auto">
             <a 
-              href="tel:6309123731" 
+              href={CALL_HREF} 
               className="flex-1 lg:flex-none px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md shadow-emerald-950/20"
             >
               <Phone size={14} /> Call Booking Desk
             </a>
             <a 
-              href={whatsappUrl} 
+              href={WHATSAPP_HREF} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex-1 lg:flex-none px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba59] active:bg-[#1da850] text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-md shadow-emerald-950/20"
@@ -100,12 +104,12 @@ export function Footer() {
             <div className="flex gap-2.5 pt-2">
               {socialChannels.map((chan, idx) => (
                 <motion.a 
-                  key={idx}
-                  whileHover={{ scale: 1.08, y: -2 }}
-                  href={chan.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2.5 bg-white/5 border border-white/5 text-emerald-300 rounded-xl hover:bg-white/10 hover:text-white transition-all shadow-inner"
+                  key={idx} 
+                  whileHover={{ scale: 1.08, y: -2 }} 
+                  href={chan.href} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="p-2.5 bg-white/5 border border-white/5 text-emerald-300 rounded-xl hover:bg-white/10 hover:text-white transition-all shadow-inner" 
                   aria-label={chan.aria}
                 >
                   {chan.icon}
@@ -156,11 +160,11 @@ export function Footer() {
             <div className="space-y-4 text-sm font-semibold">
               <motion.a 
                 whileHover={{ x: 3 }} 
-                href="tel:6309123731" 
+                href={CALL_HREF} 
                 className="flex items-center gap-3 text-emerald-100/80 hover:text-amber-400 transition-colors"
               >
                 <Phone size={16} className="text-emerald-400 flex-shrink-0" />
-                <span>+91 6309123731</span>
+                <span>{CONTACT_PHONE_DISPLAY}</span>
               </motion.a>
               <motion.a 
                 whileHover={{ x: 3 }} 

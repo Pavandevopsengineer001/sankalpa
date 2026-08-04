@@ -1,5 +1,4 @@
 "use client"
-
 import { motion } from "framer-motion"
 
 function WhatsAppIcon({ className }: { className?: string }) {
@@ -12,7 +11,11 @@ function WhatsAppIcon({ className }: { className?: string }) {
 
 export function FloatingWhatsApp() {
   // ⚡ Universal API Link with a professionally structured, URI-Encoded message to prevent browser errors
-  const whatsappUrl = "https://whatsapp.com"
+  const phone = "919876543210"; 
+  const message = encodeURIComponent(
+    "Hi Sankalpa Farms & Resorts 👋\n\nI'm interested in your farm plots. Please share complete details."
+  );
+  const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
 
   return (
     <motion.a
@@ -30,7 +33,7 @@ export function FloatingWhatsApp() {
       <span className="absolute inset-0 rounded-full bg-[#25D366] animate-pulse opacity-40 pointer-events-none" style={{ animationDelay: "0.5s" }} />
 
       {/* Dynamic Animated Core Action Layer */}
-      <motion.div
+      <motion.div 
         className="relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full shadow-xl shadow-emerald-950/10 hover:shadow-2xl hover:shadow-emerald-950/20 transition-all duration-300"
         animate={{
           scale: [1, 1.08, 1],
