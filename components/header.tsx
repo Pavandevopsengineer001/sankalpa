@@ -15,7 +15,7 @@ const NAVIGATION_ITEMS: NavItem[] = [
   { label: "Home", href: "#home" },
   { label: "Highlights", href: "#highlights" },
   { label: "Amenities", href: "#amenities" },
-  { label: "Pricing", href: "#pricing" },
+  // { label: "Pricing", href: "#pricing" },
   { label: "Location", href: "#location" },
   { label: "Contact", href: "#contact" },
 ]
